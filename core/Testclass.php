@@ -1,13 +1,13 @@
 <?php
 
-namespace Komputronika\Mvc;
+namespace Framework;
 
 class Testclass
 {
 
     function method1()
     {
-        print "Sertifikasi";
+        print "> Output from (\core\) Testclass::method1() - ( NAMESPACE :". __NAMESPACE__." | CLASS: ".__CLASS__." | METHOD: ".__METHOD__." )\n";
     }
 }
 
