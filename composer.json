@@ -3,7 +3,7 @@
     "description": "PHP MVC Framework",
     "type": "project",
     "require": {
-        "php": "^8.3"
+        "php": "^7.4"
     },
     "license": "MIT",
     "autoload": {
