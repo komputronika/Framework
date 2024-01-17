@@ -23,8 +23,6 @@ require "./core/bootstrap.php";
 // $app->run( $router )
 
 
-
-
 //--- Test
 use Framework\Testclass;
 
