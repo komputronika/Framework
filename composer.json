@@ -1,0 +1,20 @@
+{
+    "name": "komputronika/mvc",
+    "description": "PHP MVC Framework",
+    "type": "project",
+    "require": {
+        "php": "^8.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Komputronika\\Mvc\\": "core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Piepin",
+            "email": "piepin@gmail.com"
+        }
+    ]
+}
