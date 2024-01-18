@@ -1,11 +1,11 @@
 <?php
-
-// Namespace for this controller
 namespace App\Controllers;
 
 // Super class of controller
 //use Framework\Classes\Controller;
-use Framework\Classes\Parser;
+
+// Used very often, make it default;
+// use Framework\Classes\Parser;
 
 // Our class extends Controller
 class Home extends BaseController
@@ -13,19 +13,21 @@ class Home extends BaseController
 
     function __construct()
     {
-        //parent::__construct();
+        // echo "-----------------------------<br>"; 
+        // echo "Class Home<br>"; 
+        parent::__construct();
     }
 
     function parse()
     {
-        $parser = new Parser;
+        //$parser = new Parser;
 
         $data = array('user' => array(
             array('username' => 'life', 'email' => 'life@earth.zz', 'address' => 'Earth 001, Milky way'),
             array('username' => 'anonym', 'email' => 'seeyou@friday.zz', 'address' => 'Paris, France')
         ));
 
-        $parser->parse( APP_PATH ."Views/template", $data, ["path"=>'']);
+        $this->view->parse( APP_PATH ."Views/template", $data, ["path"=>'']);
     }
 
     function index()

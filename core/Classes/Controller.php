@@ -6,6 +6,7 @@ class Controller
 {
     function __construct()
     {
-        print "Core Class Controller<br>";
+        echo "-----------------------------<br>"; 
+        echo "Class Core Controller<br>"; 
     }
 }

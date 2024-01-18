@@ -81,7 +81,7 @@ class Router
 
         //
         //$controller = "App".'\\'.$controller;
-        $controllerInstance = new $controller();
+        //$controllerInstance = new $controller();
         //
 
         if (class_exists($controller)) {
@@ -92,6 +92,7 @@ class Router
 
                 $controllerInstance->$function();
                 return true;
+
             } else {
 
                 abort("No method {$function} on class {$controller}", 500);
