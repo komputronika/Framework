@@ -7,3 +7,5 @@
 !*/cache/.htaccess
 
 /vendor/
+
+composer.lock

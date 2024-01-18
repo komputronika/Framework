@@ -4,8 +4,10 @@ class Router
 {
     private static $router;
 
-    private function __construct(private array $routes = [])
+    //private function __construct(private array $routes = [])
+    private function __construct()
     {
+        $this->routes=[];
     }
 
     public static function getRouter(): self
