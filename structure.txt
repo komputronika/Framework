@@ -1,0 +1,18 @@
+root/
+    + core
+    |    + Classes
+    |    +
+    |
+    + app
+    |    + Controllers
+    |    + Models 
+    |    + Views
+    |    + Config
+    |    
+    + assets
+    |    + js
+    |    + images 
+    |    + icons
+    |    + css
+    |
+

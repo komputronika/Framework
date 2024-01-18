@@ -16,15 +16,18 @@ require "./core/helpers.php";
 require "./core/Classes/Router.php";
 
 //-----------------------------------
-//--- Define path
+//--- Define base URL
 //-----------------------------------
-// App path ended with trailing "/"
+// App path ended with NO trailing "/"
 const BASE_URL  = "/MVC";
 
+//-----------------------------------
+//--- Define base path
+//-----------------------------------
+// App path ended with trailing "/"
 const BASE_PATH =  __DIR__ . DIRECTORY_SEPARATOR;
 //const APP_PATH  =  dirname(__FILE__) . DIRECTORY_SEPARATOR . "app" . DIRECTORY_SEPARATOR;
 //const APP_PATH  =  dirname(__FILE__) . DIRECTORY_SEPARATOR . "app" . DIRECTORY_SEPARATOR;
-
 define('APP_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR . "app" . DIRECTORY_SEPARATOR );
 
 //-----------------------------------
@@ -62,12 +65,12 @@ require APP_PATH . "Config/Routes.php";
 //-----------------------------------
 // $app = Framework\Engine;
 // $app->run( $router )
+
 $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
-
-print "METHOD: $method<br>";
-print "URI: $uri<br>";
+// print "METHOD: $method<br>";
+// print "URI: $uri<br>";
 
 $router->route($method, $uri, BASE_URL);
 
