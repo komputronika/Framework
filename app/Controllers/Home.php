@@ -7,6 +7,8 @@ namespace App\Controllers;
 // Used very often, make it default;
 // use Framework\Classes\Parser;
 
+use Framework\Classes\Database;
+
 // Our class extends Controller
 class Home extends BaseController
 {
@@ -20,13 +22,22 @@ class Home extends BaseController
 
     function parse()
     {
-        //$parser = new Parser;
+        // DB Init, should in BaseController
+        $db = new Database([
+            'type' => 'mysql',
+            'host' => 'localhost',
+            'database' => 'sertifikasi_240111',
+            'username' => 'root',
+            'password' => 'LspGmbe'
+        ]);
 
-        $data = array('user' => array(
-            array('username' => 'life', 'email' => 'life@earth.zz', 'address' => 'Earth 001, Milky way'),
-            array('username' => 'anonym', 'email' => 'seeyou@friday.zz', 'address' => 'Paris, France')
-        ));
+        // Select from as table
+        $rows = $db->select('user','*');
 
+        // Add result to array
+        $data["user"] = $rows;
+
+        // Pass the array to parser
         $this->view->parse( APP_PATH ."Views/template", $data, ["path"=>'']);
     }
 
