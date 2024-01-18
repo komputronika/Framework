@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ractive</title>
+        <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
+    </head>
+    <body>
+        <div id="target"></div>
+
+        <script id="template" type="text/ractive">
+            {{#if signedIn}}
+            	<!-- message for signed-in users -->
+            	<p>Welcome back, {{username}}!</p>
+            {{/if}}
+
+            {{#if notSignedIn}}
+            	<!-- message for non-signed-in users -->
+            	<p>Hi there! Please <a href='#' on-click='@.signIn()'>sign in</a></p>
+            {{/if}}
+        </script>
+
+        <script>
+            var ractive = new Ractive({
+                target: "#target",
+                template: "#template",
+                data: {
+                    signedIn: false,
+                    notSignedIn: true,
+                },
+                signIn: function () {
+                    var name = prompt("Enter your username to sign in", "ractive_fan");
+
+                    ractive.set({
+                        username: name,
+                        signedIn: true,
+                        notSignedIn: false,
+                    });
+                },
+            });
+        </script>
+    </body>
+</html>
