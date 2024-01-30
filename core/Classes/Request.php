@@ -12,7 +12,7 @@ class Request
     function getBody ()
     {
         $body = file_get_contents("php://input");
-        return $body;
+        return trim($body);
     }
 
     function getVar( $var  )
@@ -25,6 +25,7 @@ class Request
     function getData ()
     {
         $body = $this->getBody();
+        //$data = json_decode($body, true);
         $data = json_decode($body);
         return $data;
     }

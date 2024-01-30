@@ -92,7 +92,11 @@ class Router
 
             if (method_exists($controllerInstance, $function)) {
 
+
+                // Proccess return from the method as http response
                 $controllerInstance->$function();
+
+                // Return to response controller, then print
                 return true;
 
             } else {
