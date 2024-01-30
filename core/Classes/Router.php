@@ -96,7 +96,18 @@ class Router
                 // Proccess return from the method as http response
                 $controllerInstance->$function();
 
+                // $response = $controllerInstance->$function();
+                
+
+                // Process response
+                // - Header
+                // - Body 
+                // - Cache
+                // - Etc.
+                // $response->output();
+
                 // Return to response controller, then print
+
                 return true;
 
             } else {
