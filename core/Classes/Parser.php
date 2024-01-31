@@ -44,7 +44,7 @@ class Parser
 	 * 
 	 * */
 	
-	public function parse($input, $data = array(), $config = array())
+	public function parse($input, $data = array(), $config = ['show'=>false] )
 	{
 		if (empty($data)) $data = array();
 		if (empty($config)) $config = array();
@@ -137,13 +137,15 @@ class Parser
 			if ($this->config->disable_variables === FALSE) $this->_variables();
 			if ($this->config->disable_includes === FALSE) $this->data->input = $this->_includes( $this->data->input, TRUE );
 	        
-	        $this->_show();
+	        //$this->_show();
+            $this->content = $this->data->input;
 
 	        $append = $this->data->append;	        
 	        $this->_default();
 	        $this->data->append = $append;
 	        
 	        return $this->content;
+	        //return $this->data->input;
 		}
 		
 		else

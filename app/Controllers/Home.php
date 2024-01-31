@@ -41,7 +41,7 @@ class Home extends BaseController
         //return $this->view->parse( APP_PATH ."Views/template", $data, ["path"=>'']);
         //print "PRINT: ADUH<br>";
         //return "RETURN: ADUHHHH<br>";
-        return "RETURN: ".$this->view->parse( APP_PATH ."Views/template", $data, ["path"=>'']);
+        return $this->view->parse( APP_PATH ."Views/template", $data, ["path"=>'']);
         
     }
 
