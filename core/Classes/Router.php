@@ -95,7 +95,7 @@ class Router
 
                 // Proccess return from the method as http response
                 $response = $controllerInstance->$function();
-                echo $response;
+                //echo $response;
 
                 // $response = $controllerInstance->$function();
                 

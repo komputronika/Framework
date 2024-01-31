@@ -38,6 +38,7 @@ class Home extends BaseController
         $data["user"] = $rows;
 
         // Pass the array to parser
+        //return $this->view->parse( APP_PATH ."Views/template", $data, ["path"=>'']);
         return $this->view->parse( APP_PATH ."Views/template", $data, ["path"=>'']);
     }
 
