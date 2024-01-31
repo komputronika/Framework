@@ -23,8 +23,7 @@ class Response
         // Check if use custom header
         // Check if use cache
         // Print body;
-        echo $var;
-        return true;
+        return $var;
     }
 
 }

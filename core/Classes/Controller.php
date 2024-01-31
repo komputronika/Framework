@@ -13,7 +13,7 @@ class Controller
     {
         $this->response = new Response;
         
-        echo "-----------------------------<br>"; 
-        echo "Class Core Controller<br>"; 
+        // echo "-----------------------------<br>"; 
+        // echo "Class Core Controller<br>"; 
     }
 }

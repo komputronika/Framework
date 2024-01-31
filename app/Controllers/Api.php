@@ -13,7 +13,7 @@ class Api extends Controller
     {
         // echo "-----------------------------<br>"; 
         // echo "Class Home<br>"; 
-        //parent::__construct();
+        parent::__construct();
     }
 
     function _api($data = [], $msg = 'OK', $code = 200)
@@ -42,7 +42,8 @@ class Api extends Controller
         //print_r($body);
         //print json_encode($data);
         //return 
-        $this->response->output( $view );
+
+        return $this->response->output( $view );
     }
 
 }
