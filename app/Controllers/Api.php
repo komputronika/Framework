@@ -4,6 +4,7 @@ namespace App\Controllers;
 use Framework\Classes\Controller;
 use Framework\Classes\Database;
 use Framework\Classes\Request;
+use Framework\Classes\Response;
 
 // Our class extends Controller
 class Api extends Controller
@@ -25,6 +26,7 @@ class Api extends Controller
     function index()
     {
         $req = new Request;
+        $res = new Response;
         $body = $req->getData();
 
         //print $body;
@@ -32,18 +34,20 @@ class Api extends Controller
         $token = $req->getClientToken();
         // $var = $req->getVar("skema_id");
 
-        $data["userbody"] = $body; 
+        $data["userbody"] = json_decode($body, true); 
         $data["token"] = $token; 
         // $data["var"] = $var; 
         
-       $view = $this->_api( $data );
+        $view = $this->_api( $data );
 
         //print_r($_SERVER);
         //print_r($body);
         //print json_encode($data);
         //return 
 
-        return $this->response->output( $view );
+        //return $this->response->output( $view );
+        $res->setHeader('Content-Type: application/json');
+        return $res->output( $view );
     }
 
 }
