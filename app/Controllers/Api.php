@@ -29,12 +29,10 @@ class Api extends Controller
         $res = new Response;
         $body = $req->getData();
 
-        //print $body;
-
         $token = $req->getClientToken();
         // $var = $req->getVar("skema_id");
 
-        $data["userbody"] = json_decode($body, true); 
+        $data["userbody"] = $body; 
         $data["token"] = $token; 
         // $data["var"] = $var; 
         

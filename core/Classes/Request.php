@@ -27,7 +27,13 @@ class Request
         $body = $this->getBody();
         //$data = json_decode($body, true);
         //$data = json_decode($body);
-        $data = json_encode($body);
+        
+        //print "BODY: $body\n"; 
+        
+        $data = json_decode($body, true);
+        
+        //print "DATA: "; print_r($data); die();
+
         return $data;
     }
 
